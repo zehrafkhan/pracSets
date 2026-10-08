@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="intro.js"></script> -->
+</head>
+
+<body>
+    <!-- <h2 id="output"></h2> -->
+    <!-- <button onClick="hello()">click me</button> -->
+
+    <script>
+        //      var outputElement = document.getElementById("output");
+        // outputElement.innerHTML = "Updating content with JavaScript!";
+
+        // var userInput = prompt("enter your name");
+        // console.log("user name is " + userInput);
+
+        // document.write("username is " + userInput);
+        //  var userInput = confirm();
+        //  console.log( userInput);
+
+        //arithemetic opretors
+        let a = 10 + 20;
+        console.log(a);
+
+        let b = 80 - 20;
+        console.log(b);
+
+        let c = 80 * 20;
+        console.log(c);
+
+        let d = 80 % 20;
+        console.log(d);
+
+        let e = 80 / 20;
+        console.log(e);
+
+        let f = 6;
+        f++;
+        console.log(f)
+
+        let g = 6;
+        g--;
+        console.log(g)
+
+        // comparison operators
+        let h = 8;
+        if (h == 10) {
+            console.log(true);
+        } else {
+            console.log(false);
+        };
+
+        let i = 10;
+        if (i != 20) {
+            console.log(true);
+        } else {
+            console.log(false);
+        }
+
+        let j = 5;
+        if (j > 8) {
+            console.log(true);
+        } else {
+            console.log(false)
+        }
+
+        let k = 5;
+        if (k < 8) {
+            console.log(true);
+        } else {
+            console.log(false)
+        }
+
+        let l = 5;
+        if (l <= 8) {
+            console.log(true);
+        } else {
+            console.log(false)
+        }
+
+        let m = 5;
+        if (m >= 8) {
+            console.log(true);
+        } else {
+            console.log(false)
+        }
+        //logical operators
+
+        // let person = "female";
+        // let age = 20;
+        // if (person == "male" && age == 20){
+        //     console.log(true);
+        // } else {
+        //     console.log(false);
+        // }
+
+        // let person = "female";
+        // let age = 20;
+        // if (person == "male" || age == 20){
+        //     console.log(true);
+        // } else {
+        //     console.log(false);
+        // }
+
+        // let person = "female";
+        // let age = 20;
+        // if (person != "male"){
+        //     console.log(true);
+        // } else {
+        //     console.log(false);
+        // }
+
+        //ternary operator
+        let n = 5 > 10 ? "Yes" : "No";
+        console.log(n);
+
+        function Maximum() {
+            let marksofMath = 80;
+            let marksofScience = 79;
+            let result = marksofMath > marksofScience ? "marks of math is greater" : "marks of science is greater";
+            console.log(result);
+        }
+        Maximum();
+
+        function ageCheck() {
+            let age = 17;
+            let status = age >= 18 ? "eligible to vote" : "not eligible to vote";
+            console.log(status);
+        }
+        ageCheck();
+
+        //for loop
+        let subjects = ["english", "maths", "science", "IT"]
+        let choosenSubject = "IT";
+        for (let i = 0; i < subjects.length; i++) {
+            if (subjects[i] === choosenSubject) {
+                console.log("selected subject:" + subjects[i]);
+                break;
+            }
+            console.log("subjects :" + subjects[i])
+        }
+
+        // let numbers = [2, 3, 7, 9, 10, 13];
+        // for (let i = 0; i < numbers.length; i++){
+        //     if (numbers[i] === 9){
+        //         console.log("selected number : " + numbers[i])
+        //         break;
+        //     }
+        //     console.log("not selected : " + numbers[i])
+        // }
+
+        let fruits = ["apple", "banana", "mango", "grapes", "orange"];
+        let unwantedFruit = "grapes";
+        for (let i = 0; i < fruits.length; i++) {
+            if (fruits[i] === unwantedFruit) {
+                // console.log("unwanted fruit :" + fruits[i])
+                continue;
+            };
+            console.log("considered fruits:" + fruits[i])
+
+        };
+
+        let numbers = [1, 2, 3, 4, 5, 6, 7, 8,]
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 !== 0) {
+                console.log("odd numbers are :" + numbers[i])
+                continue;
+            }
+            console.log("even numbers are : " + numbers[i]);
+        }
+
+        let flowers = ["rose", "lilly", "jasmine", 'sunflower', "lotus"];
+        let choosenFlower = "sunflower";
+        let unwantedFlower = "jasmine";
+        for (let i = 0; i < flowers.length; i++) {
+            if (flowers[i] === unwantedFlower) {
+                // console.log("unwanted flower is:" + flowers[i])
+                continue;
+            }
+            if (flowers[i] === choosenFlower) {
+                console.log("choosen flower is: " + flowers[i])
+                break;
+            }
+            console.log("considerd flowers are: " + flowers[i]);
+        }
+
+
+        //switch case statements >>>>
+
+        let dress = "skirt";
+        switch (dress) {
+            case "saree": {
+                console.log("saree is 10k");
+                break;
+            }
+            case "lehenga": {
+                console.log("lehenga is 8k");
+                break;
+            }
+            case "farshi": {
+                console.log("farshi is 9k");
+                break
+            }
+            default: {
+                console.log("dress is soldOut");
+            }
+        }
+
+    </script>
+</body>
+
+</html>

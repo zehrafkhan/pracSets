@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="/practice.js"></script> -->
+<style>
+    /* .success{
+        color: green;
+    }
+    .error {
+        color: red;
+    } */
+
+
+    /* new code */
+     /* body{
+        font-family: Arial, sans-serif
+    };
+    .correct {
+        color: green;
+    }
+    .wrong {
+        color: red;
+    } */
+
+</style>
+</head>
+
+<body>
+    <!-- <p id="text">click me to change my style</p>
+    <button onclick="changeStyle()">Change Style</button> -->
+
+
+    <!-- <h1 id="message">click here to subscribe</h1>
+    <button onclick="changeText()">Subscribe</button> -->
+
+    <!-- <button onclick="showAlert()">submit</button> -->
+
+
+    <!-- <form onsubmit="return checkForm()">
+
+        Email: <input type="text" id="email"><br><br>
+
+        Password: <input type="password" id="password"><br><br>
+
+        <button type="submit">Submit</button>
+
+    </form>
+     <p id="msg" style="color:red;"></p>
+    -->
+<!-- 
+
+    <div id="myDiv">old content</div> -->
+    <!-- <p id="myPara">this is a paragraph</p> -->
+<!-- 
+     <p id="para1">1 this is red para</p>
+      <p id="para2">2 this is blue para</p>
+       <p id="para3">3 this is green para</p> -->
+
+       <!-- <p id="para">this para is dynamic</p> -->
+
+       <!-- <div id="resultMessage"></div> -->
+
+       <!-- new code -->
+        <!-- <div id="question">
+            <p>2 + 2 = ?</p>
+            <ul>
+                <li onclick="checkAnswer(6)">The answer is 6</li>
+                <li onclick="checkAnswer(9)">The answer is 9</li>
+                <li onclick="checkAnswer(4)">The answer is 4</li>
+            </ul>
+        </div> -->
+
+        <!-- new code
+        <div id="Newtext">this is original text</div>
+        <button onclick="changeText()">click me</button> -->
+
+        <!-- new code -->
+         <ul id="mylist">
+            <li>item 1</li>
+            <li>item 2</li>
+         </ul>
+         <button onclick="addItem()">Add Item</button>
+         <button onclick="removeItem()">Remove Item</button>
+         <button onclick = "clearItem()">Clear Item</button>
+
+        <script>
+
+            function addItem(){
+                    const list = document.getElementById("mylist");
+                    const newItem = document.createElement("li");
+                    newItem.textContent = "New Item";
+                    list.appendChild(newItem)
+            }
+            function removeItem(){
+                const list = document.getElementById("mylist");
+                if (list.lastElementChild){
+                    list.removeChild(list.lastElementChild);
+                }
+            }
+            function clearItem(){
+                const list = document.getElementById("mylist");
+                list.innerHTML = "";
+            }
+
+// new code
+//     function changeText(){
+//   const paraghraph = document.getElementById("Newtext");
+//   paraghraph.textContent = "this is new text";s
+// }
+
+// new code
+            // function checkAnswer(userAnswer){
+            //     var correctAnswer = 4; // Example correct answer
+            //     if (userAnswer === correctAnswer){
+            //         displayResult("Correct well done", "correct");
+            //     } else {
+            //         displayResult("Wrong answer. Try again.", "wrong");
+            //     }
+            // }
+            // function displayResult(message, className){
+            //     var resultElement = document.getElementById("question");
+            //     resultElement.innerHTML = '<p>' + message + '</p>';
+            //     resultElement.className = className; // Set the class for styling
+            // }
+
+
+
+
+            // function checkAnswer(userInput){
+            //     var correctAnswer = "8"; // Example correct answer
+            //     userInput = userInput.toUpperCase(); // Convert user input to uppercase for case-insensitive comparison
+            //     correctAnswer = correctAnswer.toUpperCase(); // Convert correct answer to uppercase for case-insensitive comparison
+            //     if (userInput === correctAnswer){
+            //         displayMessage("Success you got it!", "success");
+            //     } else {
+            //         displayMessage("Sorry, that's not correct. Please try again.", "error");
+            //     }
+            // }
+
+            // function displayMessage(message, className){
+            //     var resultMessageDiv = document.getElementById("resultMessage");
+            //     resultMessageDiv.textContent = message;
+            //     resultMessageDiv.className = className; // Set the class for styling
+            // }
+            // window.onload = function(){
+            //     var userAnswer = prompt("4 + 4 ?")
+            //     checkAnswer(userAnswer)
+            // }
+
+        // const newDiv = document.createElement("div");
+        // newDiv.textContent = "this is a new div";
+        // document.body.appendChild(newDiv);
+
+        // var paragraph = document.getElementById("myPara");
+            // var userBorderStyle = prompt("Enter a border style (e.g., solid, dashed, dotted):");
+            // paragraph.style.border = userBorderStyle;
+
+
+    //         var para1 = document.getElementById("para1");
+    //         var para2 = document.getElementById("para2");   
+    //         var para3 = document.getElementById("para3");
+             
+    //         para1.style.color = "red";
+    //         para2.style.color = "blue";
+    //         para3.style.color = "green";
+
+    // var myPara = document.getElementById("para");
+    // var userTextColor = prompt("Enter a text color (e.g., red, blue, green):");
+    // var userBackgroundColor = prompt("Enter a background color (e.g., yellow, lightblue, lightgreen):");
+
+    // myPara.style.color = userTextColor;
+    // myPara.style.backgroundColor = userBackgroundColor;
+
+
+    </script>
+</body>
+
+</html>
