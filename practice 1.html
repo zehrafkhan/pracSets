@@ -88,7 +88,7 @@
          <button onclick = "clearItem()">Clear Item</button> -->
 
                   <!--new code -->
-                  <table >
+                  <!-- <table >
                     <tr id="row1">
                         <td>cell 1</td>
                         <td>cell 2</td>
@@ -97,22 +97,35 @@
                         <td>cell 3</td>
                         <td>cell 4</td>
                     </tr>
-                  </table>
+                  </table> -->
 
+               <!-- new code -->
+                <ul id="todolist">
+                    <li>home work</li>
+                    <li>dinner</li>
+                    <li>sleep</li>
+                </ul>
 
 
 
         <script>
-            const table = document.querySelector("table");
-            const row1 = table.querySelector("#row1");
-            const newCell = document.createElement("td");
-            newCell.textContent = "cell 5";
-            row1.appendChild(newCell);
 
-            const oldCell  = row1.querySelector("td");
-            const newCell2 = document.createElement("td");
-            newCell2.textContent = "new cell";
-            row1.replaceChild(newCell2, oldCell);
+            //new code
+            let newItem = document.createElement("li")
+            newItem.textContent = "call mom";
+            document.getElementById("todolist").insertBefore(newItem, document.getElementById("todolist").firstChild);
+
+            //new code
+            // const table = document.querySelector("table");
+            // const row1 = table.querySelector("#row1");
+            // const newCell = document.createElement("td");
+            // newCell.textContent = "cell 5";
+            // row1.appendChild(newCell);
+
+            // const oldCell  = row1.querySelector("td");
+            // const newCell2 = document.createElement("td");
+            // newCell2.textContent = "new cell";
+            // row1.replaceChild(newCell2, oldCell);
 
 //new code
             // function addItem(){
