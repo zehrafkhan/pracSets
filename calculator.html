@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basic calculator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            background: linear-gradient(135deg, #d9c9ff 0%, #b8e4ff 100%);
+            color: #25213b;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        .calculator {
+            width: min(100%, 420px);
+            padding: 36px;
+            border: 1px solid rgba(255, 255, 255, 0.75);
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 24px 60px rgba(57, 44, 105, 0.2);
+            backdrop-filter: blur(12px);
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: 1.8rem;
+            letter-spacing: -0.04em;
+        }
+
+        .subtitle {
+            margin: 0 0 28px;
+            color: #77738b;
+            font-size: 0.95rem;
+        }
+
+        .input-group {
+            display: grid;
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+
+        label {
+            color: #55516c;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #e3e0ef;
+            border-radius: 12px;
+            outline: none;
+            background: #faf9ff;
+            color: #25213b;
+            font: inherit;
+            transition: border-color 160ms ease, box-shadow 160ms ease;
+        }
+
+        input:focus {
+            border-color: #8061e8;
+            box-shadow: 0 0 0 4px rgba(128, 97, 232, 0.14);
+        }
+
+        .operations {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        button {
+            min-height: 52px;
+            border: 0;
+            border-radius: 14px;
+            background: #eeeaff;
+            color: #6247c5;
+            cursor: pointer;
+            font: inherit;
+            font-size: 1.25rem;
+            font-weight: 700;
+            transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            background: #e1d9ff;
+            box-shadow: 0 8px 16px rgba(98, 71, 197, 0.14);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button:focus-visible {
+            outline: 3px solid #8061e8;
+            outline-offset: 3px;
+        }
+
+        #result {
+            display: block;
+            min-height: 58px;
+            margin-top: 22px;
+            padding: 17px 18px;
+            border-radius: 14px;
+            background: #f4f1ff;
+            color: #514487;
+            font-size: 1rem;
+            font-weight: 600;
+            overflow-wrap: anywhere;
+        }
+
+        @media (max-width: 420px) {
+            .calculator {
+                padding: 28px 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="calculator">
+        <h1>Quick Calculator</h1>
+        <p class="subtitle">A simple way to crunch the numbers.</p>
+
+        <div class="input-group">
+            <label for="num1">First number</label>
+            <input type="number" id="num1" placeholder="Enter a number">
+        </div>
+        <div class="input-group">
+            <label for="num2">Second number</label>
+            <input type="number" id="num2" placeholder="Enter a number">
+        </div>
+
+        <div class="operations">
+            <button type="button" onClick="add()" aria-label="Add">+</button>
+            <button type="button" onClick="subtract()" aria-label="Subtract">−</button>
+            <button type="button" onClick="multiply()" aria-label="Multiply">×</button>
+            <button type="button" onClick="divide()" aria-label="Divide">÷</button>
+        </div>
+
+        <span id="result" aria-live="polite">Result will appear here</span>
+    </main>
+
+    <script>
+        function getValues(){
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            return [num1, num2];
+        }
+
+        function add(){
+           var [num1, num2] = getValues();
+           var result = num1 + num2;
+           displayResult(result);
+
+        }
+         function subtract(){
+           var [num1, num2] = getValues();
+           var result = num1 - num2;
+           displayResult(result);
+
+        }
+         function multiply(){
+           var [num1, num2] = getValues();
+           var result = num1 * num2;
+           displayResult(result);
+
+        }
+        function divide(){
+            var [num1, num2] = getValues();
+            if(num2 !== 0){
+                var result = num1 / num2;
+                displayResult(result);
+            } else {
+                displayResult("cannot divide by zero");
+            }
+        }
+
+        function displayResult(result){
+            document.getElementById("result").textContent = "Result:" + result;
+        }
+    </script>
+</body>
+</html>
