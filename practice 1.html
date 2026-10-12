@@ -100,20 +100,63 @@
                   </table> -->
 
                <!-- new code -->
-                <ul id="todolist">
+                <!-- <ul id="todolist">
                     <li>home work</li>
                     <li>dinner</li>
                     <li>sleep</li>
-                </ul>
+                </ul> -->
+
+                <!-- new code -->
+
+                <!-- <h1>change button text</h1>
+                <button id="myButton">Click me</button> -->
+
+                <!-- new code -->
+                 <h2>choose payment method</h2>
+                 <form id="paymentForm">
+                    <label>
+                        <input type="radio" name="payment" value="creditCard"> Credit Card
+                    </label>
+                    <br>
+                       <label>
+                        <input type="radio" name="payment" value="payPal"> PayPal
+                    </label>
+                    <br>
+                       <label>
+                        <input type="radio" name="payment" value="bitcoin"> Bitcoin
+                    </label>
+                    <br>
+                    <button type="submit" onClick="showPaymentMethod()">Submit</button>
+                 </form>
+                 
 
 
 
         <script>
+            //new code
+            function showPaymentMethod(){
+                var selectedMethod = document.querySelector('input[name="payment"]:checked');;
+                if (selectedMethod){
+                    alert(
+                        "choosen Payment Method: " + selectedMethod.value
+                    )
+                } else {
+                    alert("please select payment method")
+                }
+                
+            }
+
+
+            // function changeButtonText(){
+            //     var button = document.getElementById("myButton");
+            //     button.textContent = "Button Clicked!";
+            // }
+            // document.getElementById("myButton").addEventListener("click", changeButtonText);
 
             //new code
-            let newItem = document.createElement("li")
-            newItem.textContent = "call mom";
-            document.getElementById("todolist").insertBefore(newItem, document.getElementById("todolist").firstChild);
+            // let newItem = document.createElement("li")
+            // newItem.textContent = "call mom";
+            // document.getElementById("todolist").insertBefore(newItem, document.getElementById("todolist").firstChild);
 
             //new code
             // const table = document.querySelector("table");

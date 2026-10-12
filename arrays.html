@@ -1,0 +1,137 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <h2>Array insertion</h2>
+    <label for="valueInput">Enter a value</label>
+    <input type="text" id="valueInput">
+     
+    <label for="insertOption">choose insertion </label>
+    <select id="insertOption">
+        <option value="insertFirst">Insert First</option>
+        <option value="insertLast">Insert Last</option>
+    </select>
+    <button onclick="insertValue()">Insert</button>
+    <h3>Array</h3>
+    <div id="arrayOutput"></div>
+
+
+    <script>
+        var myArray = [];
+
+        function insertValue(){
+            var value = document.getElementById("valueInput").value;
+            var insertOption = document.getElementById("insertOption").value;
+            if (insertOption === "insertFirst"){
+                myArray.unshift(value);
+            }else if(insertOption === "insertLast"){
+                myArray.push(value);
+            }
+            document.getElementById("arrayOutput").textContent = "Array: " + myArray.join(", ");
+        }
+    </script>
+</body>
+</html> -->
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Checker</title>
+</head>
+<body>
+    <h2>Array value check</h2>
+    <label for="valueInput">Enter a value</label>
+    <input type="text" id="valueInput">
+    <button onclick="checkValue()">Check</button>
+
+    <script>
+        var myArray = ["apple", "banana", "cherry", "date", "elderberry"];
+        function checkValue(){
+            var value = document.getElementById("valueInput").value;
+            var exists = myArray.includes(value);
+            if (exists){
+                console.log("Array " + myArray.join(" ,"))
+            } else {
+                console.log(false)
+            }
+        }
+    </script>
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to-do list</title>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <label for="taskInput">Enter a task:</label>
+    <input type="text" id="taskInput">
+    <button onclick="addTask()">Add Task</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        function addTask(){
+            var taskInput = document.getElementById("taskInput");
+            var taskTest = taskInput.value
+            if (taskTest.trim() !== ""){
+                var newTask = document.createElement("li")
+                newTask.textContent = taskTest;
+                document.getElementById("taskList").appendChild(newTask);
+            }
+        }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array operations</title>
+</head>
+<body>
+    <input type="text" id="taskInput" placeholder="Add Task">  
+    <button onclick="addTask()">Add Task</button>
+    <input type="text" id="searchInput" placeholder="Search Task">
+    <button onclick="searchTask()">Search Task</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        var tasks = []
+        function addTask(){
+            var taskInput = document.getElementById("taskInput").value;
+            tasks.push(taskInput);
+            displayTasks();
+        }
+        function searchTask(){
+            var searchInput = document.getElementById("searchInput").value.toLowerCase();
+            var filteredTasks = tasks.filter(task => task.toLowerCase().includes(searchInput));
+            displayTasks(filteredTasks);
+        }
+
+        function displayTasks(taskArray = tasks){
+            var taskList = document.getElementById("taskList");
+            taskList.innerHTML = "";
+            taskArray.forEach(function(task){
+                var li = document.createElement("li");
+                li.textContent = task;
+                taskList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
