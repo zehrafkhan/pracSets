@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,10 +7,103 @@
 </head>
 <body>
     <script>
-        for (i = 1; i <=10; i++){
-            console.log(i*39)
+    //  new code 1
+    var numbers = [];
+    for (var i =0; i<5; i++){
+        var userInput = prompt("Enter a number:");
+        numbers.push(parseInt(userInput));
+    }
+    for (var i =0; i < numbers.length; i++){
+        if (numbers[i] % 3 === 0){
+            console.log(numbers[i]);
         }
+    }
+
     </script>
 
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Product calculator</h1>
+    <form id="numberForm">
+        <label for="numbers">Enter numbers (comma-separated):</label>
+        <input type="text" id="numbers" placeholder="e.g. 1,2,3,4,5">
+        <button type="button" onclick="calculateProduct()">Calculate Product</button>
+    </form>
+    <p id="result"></p>
+    <script>
+        // new code 2
+        function calculateProduct() {
+           var inputNumbers = document.getElementById("numbers").value.split(",").map(Number);
+           var product = 1;
+           var i =0;
+           while(i < inputNumbers.length){
+            product *= inputNumbers[i];
+            i++;
+           }
+           document.getElementById("result").textContent = "Product: " + product;
+        }
+
+    </script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Words containing "e"</h1>
+    <ul id="matchingWords"></ul>
+
+    <script>
+        var words = ["apple", "banana", "cherry", "date", "elderberry"];
+        var matchingWords = document.getElementById("matchingWords");
+
+        for (var i =0; i < words.length; i++){
+            if (words[i].includes("e")){
+                console.log(words[i]);
+                var listItem = document.createElement("li");
+                listItem.textContent = words[i];
+                matchingWords.appendChild(listItem);
+            }
+        }
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function countVowels(inputString){
+            var vowelCount = 0;
+            var lowercaseString = inputString.toLowerCase();
+            for (var i =0; i < lowercaseString.length; i++){
+                if ("aeiou".includes(lowercaseString[i])){
+                    vowelCount++;
+
+                }
+            }
+            // return vowelCount;
+        }
+    </script>
 </body>
 </html>
