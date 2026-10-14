@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f2efff">
+    <title>Age Calculator</title>
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: Inter, "Segoe UI", Arial, sans-serif;
+            color: #252344;
+            background: #f2efff;
+            font-synthesis: none;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-width: 320px;
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            background:
+                radial-gradient(ellipse at 12% 15%, rgba(255, 255, 255, 0.95), transparent 34%),
+                radial-gradient(ellipse at 88% 82%, rgba(194, 177, 255, 0.38), transparent 36%),
+                linear-gradient(135deg, #f1edff, #e8f2ff);
+        }
+
+        .calculator-card {
+            position: relative;
+            isolation: isolate;
+            width: min(100%, 470px);
+            padding: 42px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.85);
+            border-radius: 28px;
+            background: rgba(255, 255, 255, 0.84);
+            box-shadow: 0 28px 80px rgba(65, 57, 126, 0.16), inset 0 1px rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+        }
+
+        .calculator-card::before {
+            position: absolute;
+            z-index: -1;
+            top: -95px;
+            right: -75px;
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(174, 151, 255, 0.24), rgba(117, 180, 255, 0.12));
+            content: "";
+        }
+
+        .eyebrow {
+            margin: 0 0 12px;
+            color: #765bd0;
+            font-size: 0.72rem;
+            font-weight: 750;
+            letter-spacing: 0.19em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(2rem, 7vw, 2.6rem);
+            font-weight: 720;
+            letter-spacing: -0.06em;
+        }
+
+        .subtitle {
+            margin: 12px 0 30px;
+            color: #77758f;
+            font-size: 0.97rem;
+            line-height: 1.6;
+        }
+
+        .date-field {
+            display: grid;
+            gap: 10px;
+        }
+
+        label {
+            color: #484663;
+            font-size: 0.9rem;
+            font-weight: 650;
+        }
+
+        input[type="date"] {
+            width: 100%;
+            min-height: 56px;
+            padding: 0 16px;
+            border: 1px solid #e2def2;
+            border-radius: 15px;
+            outline: none;
+            background: #faf9ff;
+            color: #302d4b;
+            font: inherit;
+            transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+        }
+
+        input[type="date"]:hover {
+            border-color: #c5b8ef;
+        }
+
+        input[type="date"]:focus-visible {
+            border-color: #8870df;
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(136, 112, 223, 0.15);
+        }
+
+        .result {
+            min-height: 90px;
+            margin: 24px 0 0;
+            padding: 19px 20px;
+            border: 1px solid #e5defa;
+            border-radius: 17px;
+            background: linear-gradient(135deg, #f5f1ff, #f0f6ff);
+            color: #53458e;
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.65;
+            overflow-wrap: anywhere;
+        }
+
+        @media (max-width: 480px) {
+            .calculator-card {
+                padding: 32px 24px;
+                border-radius: 23px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="calculator-card">
+        <p class="eyebrow">A little perspective</p>
+        <h1>Age Calculator</h1>
+        <p class="subtitle">Choose your date of birth to see how long you've been on this journey.</p>
+        <div class="date-field">
+            <label for="dob">Your date of birth</label>
+            <input type="date" id="dob" onchange="calculateAge()">
+        </div>
+        <p class="result" id="result" aria-live="polite">Your age will appear here.</p>
+    </main>
+
+    <script>
+        function calculateAge() {
+            var dob = new Date(document.getElementById("dob").value)
+            var currentDate = new Date();
+            var ageInMillisecond = currentDate - dob;
+            var ageInYears = Math.floor(ageInMillisecond / (365.25 * 24 * 60 * 60 * 1000));
+            var ageInMonths = Math.floor(ageInMillisecond / (30.44 * 24 * 60 * 60 * 1000));
+            var ageInDay = Math.floor(ageInMillisecond / (24 * 60 * 60 * 1000));
+            document.getElementById("result").textContent = "your age is : " + ageInYears + "years," + ageInMonths + "months, and" + ageInDay + "days."
+
+        }
+    </script>
+</body>
+
+</html>

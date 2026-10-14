@@ -1,0 +1,231 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user = {
+            name: "zehra",
+            email: "zehra@example.com",
+            
+            get userEmail(){
+                return this.email.toLowerCase()
+            },
+            set userEmail(newEmail){
+               if (newEmail.includes("@")){
+                this.email = newEmail;
+               } else {
+                console.log("Invalid email address");
+               }
+            }
+        }
+        user.userEmail = "new@example.com"
+        console.log(user.userEmail) // Output:
+
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Car (model,speed, engineType){
+            this.model = model;
+            this.speed = speed;
+            this.engineType = engineType;
+        }
+        const car1 = new Car("Toyota", 120, "Gasoline");
+        const car2 = new Car("Honda", 130, "Diesel");
+        console.log(car1);
+        console.log(car2);
+    </script>
+    
+</body>
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+        function Students (name, age, grade){
+            this.name = name;
+            this.age = age;
+            this.grade = grade;
+
+              this.printDetails = function(){
+            console.log(` ${this.name} is ${this.age} years old and has a grade of ${this.grade}.`);
+        }
+        }
+        let student1 = new Students("Zehra", 20, "A");
+        let student2 = new Students("shweta", 22, "B");
+        student1.printDetails();    
+        student2.printDetails();
+      
+    </script>
+</body>
+</html -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Product(name,price,discountPercent){
+            this.name= name;
+            this.price= price;
+            this.discountPercent= discountPercent
+
+            this.getDiscountPrice  = function(){
+                return this.price - (this.price* this.discountPercent / 100);
+            }
+
+        }
+        let p1 = new Product("laptop", 500000,10);
+        console.log(`${p1.name} discounted price: ${p1.getDiscountPrice()}`);
+
+
+
+        </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Movie(name, director, releaseDate){
+            this.name = name,
+            this.director= director;
+            this.releaseDate = releaseDate;
+
+            this.getSummary = function(){
+                return (`${name} was directed by ${director} in year ${releaseDate}`);
+            }
+        }
+        let m1 = new Movie("interception", "crestopher", 2010);
+        console.log(m1.getSummary());
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function BankAccount(accountHolder, balance) {
+            this.accountHolder = accountHolder;
+            this.balance = balance;
+
+            this.deposit = function (amount) {
+                this.balance += amount
+            };
+
+            this.withdraw = function (amount) {
+                if (amount <= this.balance) {
+                    this.balance -= amount
+                } else {
+                    console.log("insufficient balance")
+                }
+            }
+            this.getBalance = function () {
+                return this.balance;
+            }
+
+        }
+        let acc = new BankAccount("zeee", 1000);
+        acc.deposit(500);
+        acc.withdraw(300);
+        console.log(`Final balance: ₹${acc.getBalance()}`); 
+    </script>
+</body>
+
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Rectangle(length, width) {
+            this.length = length;
+            this.width = width;
+
+            this.getArea = function () {
+                return this.length * this.width;
+            }
+            this.getPerimeter = function () {
+                return 2 * (this.length + this.width);
+            }
+        }
+        let rect = new Rectangle(10, 5);
+        console.log("Area:", rect.getArea());
+        console.log("Perimeter:", rect.getPerimeter());
+    </script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function LibraryBook(title,author){
+            this.title = title;
+            this.author = author;
+            this.isAvailable = true;
+
+            this.toggleAvailiblity = function(){
+                this.isAvailable = !this.isAvailable;
+            }
+            this.getstatus = function(){
+                return this.isAvailable? "Available" : "checked out"
+            }
+        };
+        let book = new LibraryBook("Alchemist", "paulo")
+        console.log(book.getstatus());
+        book.toggleAvailiblity()
+         console.log(book.getstatus());
+    </script>
+</body>
+</html>
