@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function checkAge(age){
+        //     if(age < 18){
+        //         throw new Error("sorry! you must be 18 or older to enter")
+        //     }else{
+        //             console.log("welcome!!!")
+        //     }
+        // }
+        // try{
+        //     checkAge(7)
+        // } catch(error){
+        //     console.log(error.message)
+        // }finally{
+        //     console.log("i will always execute")
+        // }
+
+        // function divide(a, b) {
+        //     if (b === 0) {
+        //         throw new Error("sorry! division by zero is not allowed")
+        //     }
+
+        //     else {
+        //         console.log("Answer:", a / b)
+        //     }
+
+        // }
+        // try {
+        //     divide(3,9)
+
+        // }catch(error){
+        //     console.log(error.message)
+        // }
+
+
+        async function apiCall() {
+            try{
+                const url ="https://jsonplaceholder.typicode.co/posts/";
+                let response = await fetch(url)
+                response =await response.json();
+                console.log(response);
+                alert("api call done")
+
+            }catch(error){
+                console.log(error.message);
+                alert(error.message + "please check url")
+
+            }
+            
+        }
+
+    </script>
+</body>
+
+</html>
